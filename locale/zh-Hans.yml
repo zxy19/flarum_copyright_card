@@ -1,0 +1,48 @@
+xypp-copyright-card:
+  # For more details on the format
+  # Checkout https://docs.flarum.org/extend/i18n/#appendix-a-standard-key-format
+  admin:
+    force-tag: '强制显示版权信息的标签'
+  forum:
+    select-copyright: '版权信息'
+    copyright:
+      author: '作者: {author}'
+      title: '原标题: {title}'
+      url: '<a>{url}</a>'
+      license: '许可: {license}'
+    type:
+      title: '版权信息类型'
+      original: '原始来源'
+      translation: '翻译来源'
+      transport: '搬运'
+      modify: '修改'
+      revive: '重置'
+    current:
+      original: '原创贴'
+      translation: '翻译贴'
+      transport: '搬运贴'
+      modify: '修改的内容'
+      revive: '重置内容'
+      none: '没有设置版权信息'
+    prefix:
+      original: '原'
+      translation: '翻'
+      transport: '搬'
+      modify: '改'
+      revive: '复'
+    piece:
+      author: '作者'
+      title: '标题'
+      url: '地址'
+      license: '许可'
+      type: '类型'
+      submit: '保存'
+      piece: '版权片段'
+    config:
+      title: '版权信息配置'
+      add: '添加'
+      remove: '移除'
+      edit: '编辑'
+      current: '这篇帖子是'
+      clear: '清除'
+      submit: '保存'

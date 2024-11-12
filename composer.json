@@ -1,0 +1,61 @@
+{
+    "name": "xypp/flarum-copyright-card",
+    "description": "Add a card-style notice for copyright info.",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.2.0"
+    },
+    "authors": [
+        {
+            "name": "小鱼飘飘",
+            "email": "z@xypp.cc",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Xypp\\CopyrightCard\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Copyright Card",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-copyright",
+                "color": "#fff",
+                "backgroundColor": "#7b1fa2"
+            },
+            "optional-dependencies": [
+                "flarum/tags"
+            ]
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": true,
+                "forum": true,
+                "js": true,
+                "jsCommon": true,
+                "css": true,
+                "locale": true,
+                "gitConf": true,
+                "githubActions": true,
+                "prettier": true,
+                "typescript": true,
+                "bundlewatch": false,
+                "backendTesting": true,
+                "editorConfig": true,
+                "styleci": true
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "flarum/tags": "^1.8"
+    }
+}

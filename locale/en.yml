@@ -1,0 +1,48 @@
+xypp-copyright-card:
+  # For more details on the format
+  # Checkout https://docs.flarum.org/extend/i18n/#appendix-a-standard-key-format
+  admin:
+    force-tag: 'Force show copyright tag'
+  forum:
+    select-copyright: 'Copyright Info'
+    copyright:
+      author: 'Author: {author}'
+      title: 'Original Title: {title}'
+      url: '<a>{url}</a>'
+      license: 'License: {license}'
+    type:
+      title: 'Copyright Type'
+      original: 'Original Source'
+      translation: 'Translation'
+      transport: 'Transport'
+      modify: 'Modification'
+      revive: 'Reviving'
+    current:
+      original: 'Original Post'
+      translation: 'Translated Post'
+      transport: 'Transported Post'
+      modify: 'Modified Post'
+      revive: 'Revived Post'
+      none: 'Have no copyright info'
+    prefix:
+      original: 'Orig.'
+      translation: 'Trans.'
+      transport: 'Port.'
+      modify: 'Mod.'
+      revive: 'Rev.'
+    piece:
+      author: 'author'
+      title: 'title'
+      url: 'url'
+      license: 'license'
+      type: 'Type'
+      submit: 'Save'
+      piece: 'Piece'
+    config:
+      title: 'Copyright Configuration'
+      add: 'Add'
+      remove: 'Remove'
+      edit: 'Edit'
+      current: 'Current Discussion'
+      clear: 'Clear'
+      submit: 'Save'
