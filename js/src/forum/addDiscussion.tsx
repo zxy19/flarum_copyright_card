@@ -62,9 +62,9 @@ export function addDiscussion() {
             const discussion = this.attrs.discussion as Discussion;
             const copyright = discussion.attribute<{ current: COPYRIGHT_TYPE, all: COPYRIGHT_DATA[] }>("copyright");
             if (copyright) {
-                const title = items.children[0].children[0];
+                const title = items.children[0];
 
-                items.children[0].children[0] = <div className="copyright-title">
+                items.children[0] = <div className="copyright-title">
                     <div className={classList("copyright-prefix", copyright.current)}>
                         {app.translator.trans('xypp-copyright-card.forum.prefix.' + copyright.current)}
                     </div>

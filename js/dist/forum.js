@@ -216,8 +216,8 @@ function addDiscussion() {
     var discussion = this.attrs.discussion;
     var copyright = discussion.attribute("copyright");
     if (copyright) {
-      var title = items.children[0].children[0];
-      items.children[0].children[0] = m("div", {
+      var title = items.children[0];
+      items.children[0] = m("div", {
         className: "copyright-title"
       }, m("div", {
         className: flarum_common_utils_classList__WEBPACK_IMPORTED_MODULE_5___default()("copyright-prefix", copyright.current)
