@@ -162,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function addDiscussion() {
-  (0,flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__.extend)((flarum_forum_components_CommentPost__WEBPACK_IMPORTED_MODULE_0___default().prototype), 'bodyItems', function (items) {
+  if ("bodyItems" in (flarum_forum_components_CommentPost__WEBPACK_IMPORTED_MODULE_0___default().prototype)) (0,flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__.extend)((flarum_forum_components_CommentPost__WEBPACK_IMPORTED_MODULE_0___default().prototype), 'bodyItems', function (items) {
     var discussion = this.attrs.post.discussion();
     var hasTag = false;
     if (flarum.extensions['flarum-tags']) {
@@ -180,8 +180,28 @@ function addDiscussion() {
         }), 10000);
       }
     }
+  });else (0,flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__.extend)((flarum_forum_components_CommentPost__WEBPACK_IMPORTED_MODULE_0___default().prototype), "content", function (items) {
+    var discussion = this.attrs.post.discussion();
+    var hasTag = false;
+    if (flarum.extensions['flarum-tags']) {
+      var tags = discussion.tags();
+      var force = flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().forum.attribute("xypp-copyright-card.force-tag") || [];
+      hasTag = !!(tags && tags.find(function (e) {
+        return e && force.includes(e.id() + "");
+      }));
+    }
+    if (discussion && this.attrs.post && this.attrs.post.number() == 1) {
+      var copyright = discussion.attribute("copyright");
+      if (copyright || hasTag) {
+        items.find(function (e) {
+          return e.attrs.className == 'Post-body';
+        }).children.unshift(_components_CopyrightCard__WEBPACK_IMPORTED_MODULE_2__.CopyrightCard.component({
+          data: copyright
+        }));
+      }
+    }
   });
-  (0,flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__.extend)((flarum_forum_components_DiscussionListItem__WEBPACK_IMPORTED_MODULE_4___default().prototype), 'mainItems', function (items) {
+  if ("mainItems" in (flarum_forum_components_DiscussionListItem__WEBPACK_IMPORTED_MODULE_4___default().prototype)) (0,flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__.extend)((flarum_forum_components_DiscussionListItem__WEBPACK_IMPORTED_MODULE_4___default().prototype), 'mainItems', function (items) {
     var discussion = this.attrs.discussion;
     var copyright = discussion.attribute("copyright");
     if (copyright) {
@@ -191,6 +211,17 @@ function addDiscussion() {
       }, m("div", {
         className: flarum_common_utils_classList__WEBPACK_IMPORTED_MODULE_5___default()("copyright-prefix", copyright.current)
       }, flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().translator.trans('xypp-copyright-card.forum.prefix.' + copyright.current)), title), items.getPriority('title'));
+    }
+  });else (0,flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__.extend)((flarum_forum_components_DiscussionListItem__WEBPACK_IMPORTED_MODULE_4___default().prototype), 'mainView', function (items) {
+    var discussion = this.attrs.discussion;
+    var copyright = discussion.attribute("copyright");
+    if (copyright) {
+      var title = items.children[0].children[0];
+      items.children[0].children[0] = m("div", {
+        className: "copyright-title"
+      }, m("div", {
+        className: flarum_common_utils_classList__WEBPACK_IMPORTED_MODULE_5___default()("copyright-prefix", copyright.current)
+      }, flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().translator.trans('xypp-copyright-card.forum.prefix.' + copyright.current)), title);
     }
   });
 }
