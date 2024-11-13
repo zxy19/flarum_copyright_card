@@ -8,19 +8,20 @@ use Illuminate\Validation\Validator;
 
 class AddValidator
 {
-    static $KEYS_VALIDATOR = ['url', 'title', 'author', 'license', 'type'];
+    static $KEYS_VALIDATOR = ['url', 'title', 'author', 'license', 'type', 'other'];
     static $VALID_TYPES = [
         "original",
         "translation",
         "transport",
         "modify",
         "revive",
+        "own"
     ];
     public function __invoke(AbstractValidator $flarumValidator, Validator $validator)
     {
         $validator->addExtension('copyright', function ($attribute, $value, $parameters) {
             $value = json_decode($value, true);
-            
+
             if (!in_array(Arr::get($value, 'current'), self::$VALID_TYPES)) {
                 return false;
             }
@@ -38,8 +39,8 @@ class AddValidator
                     return false;
                 }
 
-                foreach($item as $key=>$value){
-                    if(!in_array($key, self::$KEYS_VALIDATOR)){
+                foreach ($item as $key => $value) {
+                    if (!in_array($key, self::$KEYS_VALIDATOR)) {
                         return false;
                     }
                 }

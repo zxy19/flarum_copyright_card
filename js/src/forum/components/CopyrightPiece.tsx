@@ -33,6 +33,9 @@ export class CopyrightPiece extends Component<{ data: COPYRIGHT_DATA, first: boo
         if (this.attrs.data.license) {
             items.add("license", <div>{app.translator.trans('xypp-copyright-card.forum.copyright.license', { license: this.attrs.data.license })}</div>);
         }
+        if (this.attrs.data.other) {
+            items.add("other", <div>{this.attrs.data.other}</div>);
+        }
 
         return items;
     }

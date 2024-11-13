@@ -17,12 +17,14 @@ xypp-copyright-card:
       transport: '搬运'
       modify: '修改'
       revive: '重置'
+      own: "所有者"
     current:
-      original: '原创贴'
-      translation: '翻译贴'
-      transport: '搬运贴'
-      modify: '修改的内容'
-      revive: '重置内容'
+      original: '原创'
+      translation: '翻译'
+      transport: '搬运'
+      modify: '修改'
+      revive: '重置'
+      own: '自有'
       none: '没有设置版权信息'
     prefix:
       original: '原'
@@ -30,6 +32,7 @@ xypp-copyright-card:
       transport: '搬'
       modify: '改'
       revive: '复'
+      own: '自'
     piece:
       author: '作者'
       title: '标题'
@@ -37,6 +40,7 @@ xypp-copyright-card:
       license: '许可'
       type: '类型'
       submit: '保存'
+      other: '其他信息'
       piece: '版权片段'
     config:
       title: '版权信息配置'

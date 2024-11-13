@@ -29,7 +29,7 @@ export default class CopyrightConfigModal extends Modal<{ value: { current: COPY
     }
 
     title() {
-        return app.translator.trans('xypp-copyright-card.forum.modal.title');
+        return app.translator.trans('xypp-copyright-card.forum.config.title');
     }
 
     content() {
