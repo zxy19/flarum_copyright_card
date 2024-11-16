@@ -37,7 +37,7 @@ export function addDiscussion() {
             if ((discussion && this.attrs.post && this.attrs.post.number() == 1)) {
                 const copyright = discussion.attribute("copyright");
                 if (copyright || hasTag) {
-                    (Array.from(items as any) as any[]).find((e: any) => e.attrs.className == 'Post-body').children.unshift(CopyrightCard.component({ data: copyright }));
+                    items.find((e: any) => e.attrs.className == 'Post-body').children.unshift(CopyrightCard.component({ data: copyright }));
                 }
             }
         });

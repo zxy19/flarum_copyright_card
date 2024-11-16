@@ -1,3 +1,3 @@
 module.exports = require('flarum-webpack-config')({
-    useExtensions: ['flarum-tags']
+    useExtensions: ['flarum-tags',"jslirola-login2seeplus"]
 });
