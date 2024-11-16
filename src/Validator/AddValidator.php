@@ -20,6 +20,9 @@ class AddValidator
     public function __invoke(AbstractValidator $flarumValidator, Validator $validator)
     {
         $validator->addExtension('copyright', function ($attribute, $value, $parameters) {
+            if (is_null($value))
+                return true;
+            
             $value = json_decode($value, true);
 
             if (!in_array(Arr::get($value, 'current'), self::$VALID_TYPES)) {
