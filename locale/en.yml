@@ -3,6 +3,10 @@ xypp-copyright-card:
   # Checkout https://docs.flarum.org/extend/i18n/#appendix-a-standard-key-format
   admin:
     force-tag: 'Force show copyright tag'
+    permission:
+      copyright-card:
+        own: "Modify copyright info of own posts"
+        all: "Modify copyright info of all posts"
   forum:
     select-copyright: 'Copyright Info'
     copyright:

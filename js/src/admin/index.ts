@@ -12,4 +12,22 @@ app.initializers.add('xypp/flarum-copyright-card', () => {
           requireParentTag: false,
         },
       });
+  appExt.registerPermission(
+    {
+      label: app.translator.trans('xypp-copyright-card.admin.permission.copyright-card.own'),
+      permission: 'xypp-copyright.edit_own',
+      icon: 'fas fa-copyright',
+    },
+    'moderate',
+    100
+  );
+  appExt.registerPermission(
+    {
+      label: app.translator.trans('xypp-copyright-card.admin.permission.copyright-card.all'),
+      permission: 'xypp-copyright.edit_all',
+      icon: 'fas fa-copyright',
+    },
+    'moderate',
+    100
+  );
 });

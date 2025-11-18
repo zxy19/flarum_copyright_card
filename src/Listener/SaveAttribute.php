@@ -13,7 +13,7 @@ class SaveAttribute
         if (Arr::has($event->data, 'attributes.copyright')) {
             if (
                 (
-                    $event->discussion->user()->is($event->actor)
+                    $event->discussion->user->is($event->actor)
                     &&
                     $event->actor->can('xypp-copyright.edit_own', $event->discussion)
                 )
